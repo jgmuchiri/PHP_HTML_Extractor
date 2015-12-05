@@ -1,5 +1,5 @@
 # attributesValuesExtractor
-Extracts attributes in elements inside content. 
+Extracts attribute values inside an element from html content 
 
 ## problem
 You post html content and inside the content, you have shortcodes with attributes like [pageBreak id="home" title="Home page"]
