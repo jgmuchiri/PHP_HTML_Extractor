@@ -1,0 +1,25 @@
+<?php 
+/**
+* You can modify preg_match_all to match your needs
+*/
+$content = 'hello there  [pageBreak ="home" title="Home page"] new page [/pageBreak] another page';
+extract($content);
+function extract($content){
+        preg_match_all("/\[pageBreak id=\"(.*?)\" title=\"(.*?)\"\]/", $content,$navs);
+
+
+        $n = array();
+        foreach( $navs[0] as $nav)
+        {
+            preg_match_all('/(id|title)=("[^"]*")/i',$nav, $n[$nav]);
+        }
+
+       foreach($n as $i){
+           $nav=$i[2][0];
+           $title=$i[2][1];
+           print($nav.'='.$title);
+          echo '</br>';
+       }
+ 
+    }
+    ?>
